@@ -1,0 +1,12 @@
+@use './animations' as *;
+
+
+@function BackgroundChangeColorAnimation() {
+    @return backgroundColorsChange;
+}
+
+
+@function randomColor(){
+    @return rgb(random(255), random(255), random(255));
+  }
+

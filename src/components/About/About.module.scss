@@ -1,0 +1,111 @@
+@use "../../sharedStyles/mixins.scss" as *;
+@use "../../sharedStyles/variables.scss" as *;
+@use "../../sharedStyles/MobileDesktopSeparator.scss" as *;
+
+.container {
+    display: flex;
+    margin-left: $pageLeftMargin;
+    @include mobile {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        background-color: $grayBackground;
+    }
+
+    @include desktop {
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+
+.leftContainer {
+    @include desktop {
+        @include flexColumn;
+    }
+}
+
+.background {
+    @include center;
+    margin-top: 48px;
+    background-color: $grayBackground;
+    width: 100%;
+}
+
+.btn {
+    width: 100%;
+}
+
+.btnsContainer {
+    @include flexColumn;
+    height: 202px;
+    margin-left: 40px;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.epicureImg {
+    padding-top: 20px;
+    @include desktop {
+        order: 10;
+    }
+}
+
+.googlePlay {
+    padding-top: 32px;
+    height: 52px;
+    width: 180px;
+}
+
+.appStore {
+    height: 52px;
+    width: 180px;
+    padding-top: 23px;
+
+    @include desktop {
+        padding-left: 20px;
+    }
+}
+
+.bottom {
+    padding-top: 20px;
+}
+
+.buttons {
+    @include mobile {
+        @include flexColumn;
+    }
+    @include desktop {
+        order: 2;
+        margin-bottom: 40px;
+    }
+}
+
+.contentContainer {
+    order: 1;
+}
+
+.content {
+    @include content;
+    white-space: pre-wrap;
+    padding-top: 16px;
+
+    @include desktop {
+        height: 330px;
+        width: 569px;
+    }
+}
+
+.title {
+    @include titleMobile;
+    @include titleDesktop;
+    padding-top: 48px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.btn {
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 22px;
+    letter-spacing: 1.9199999570846558px;
+}

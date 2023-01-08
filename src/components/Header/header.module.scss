@@ -1,0 +1,62 @@
+@use "../../sharedStyles/base.scss" as *;
+@use "../../sharedStyles/mixins.scss" as *;
+@use "../../sharedStyles/MobileDesktopSeparator.scss" as *;
+
+.container {
+    display: flex;
+    align-items: center;
+    height: 46px;
+    width: 100%;
+}
+
+.left {
+    width: 100%;
+    @include desktop {
+        display: flex;
+        align-items: center;
+        margin-left: 5%;
+        gap: 30px;
+    }
+}
+
+.hamburger {
+    margin-left: 6%;
+    @include DisableOnDesktop;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    @include DisableOnDesktop;
+}
+
+.right {
+    display: flex;
+    @include mobile {
+        justify-content: center;
+        gap: 10%;
+        width: 100%;
+    }
+
+    @include desktop {
+        gap: 25px;
+    }
+}
+
+.title {
+    width: 114px;
+    height: 33px;
+    font-size: 27px;
+    line-height: 32.64px;
+    letter-spacing: 1.35px;
+}
+
+.link {
+    width: 108px;
+    height: 22px;
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 21.76px;
+    letter-spacing: 1.92px;
+}

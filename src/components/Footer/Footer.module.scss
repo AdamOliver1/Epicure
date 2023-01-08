@@ -1,0 +1,27 @@
+@use "../../sharedStyles/mixins.scss" as *;
+@use "../../sharedStyles/variables.scss" as *;
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    @include mobile {
+        margin-left: $pageLeftMargin;
+        flex-direction: column;
+        height: 202px;
+    }
+
+    @include desktop {
+        height: 81px;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+}
+
+.btn {
+    @include mobile {
+        width: 100%;
+    }
+}

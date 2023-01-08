@@ -1,0 +1,96 @@
+@use "../../sharedStyles/base.scss" as *;
+@use "../../sharedStyles/mixins.scss" as *;
+@use "../../sharedStyles/functions.scss" as *;
+
+.container {
+    position: relative;
+}
+
+.title {
+    text-align: center;
+    width: 100%;
+    font-size: 24px;
+
+    @include desktop {
+        font-size: 32px;
+    }
+}
+
+.title-container {
+    @include centerColumn;
+    width: 100%;
+}
+
+.inputContainer {
+    @include center;
+    width: 90%;
+    height: 20%;
+    border-color: rgb(160, 141, 141);
+    border-style: groove;
+    border-radius: 5px;
+
+    @include desktop {
+        width: 505px;
+        height: 48px;
+    }
+}
+
+.input {
+    width: 80%;
+    border-style: none;
+
+    @include desktop {
+        width: 90%;
+        height: 29px;
+        border-style: none;
+    }
+}
+
+.backgroundMobile {
+    width: 100vw;
+    object-fit: cover;
+    height: 273px;
+    @include desktop {
+        display: none;
+    }
+}
+
+.backgroundDesktop {
+    object-fit: cover;
+    height: 696px;
+    width: 100vw;
+    left: 0px;
+    top: 64px;
+    border-radius: 0px;
+    display: none;
+    @include desktop {
+        display: block;
+    }
+}
+
+.box {
+    animation-name: BackgroundChangeColorAnimation();
+    @include centerColumn;
+    animation-duration: 4s;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 335px;
+    height: 144px;
+    gap: 18px;
+    opacity: 0.9;
+    background-color: white;
+
+    @include desktop {
+        width: 776px;
+        height: 221px;
+    }
+}
+
+.img {
+    @include desktop {
+        height: 32px;
+        width: 32px;
+    }
+}

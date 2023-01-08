@@ -1,0 +1,95 @@
+@use "../../sharedStyles/mixins.scss" as *;
+@use "../../sharedStyles/variables.scss" as *;
+@use "../../sharedStyles/MobileDesktopSeparator.scss" as *;
+
+.container {
+    @include centerColumn;
+    width: 100%;
+    align-items: stretch;
+    margin-top: 48px;
+    gap: 20px;
+}
+
+.cardsContainer {
+    display: flex;
+    scroll-behavior: smooth;
+    justify-items: center;
+    gap: 20px;
+}
+
+.row {
+    @include DisableOnDesktop;
+    @include mobile {
+        margin-left: $pageLeftMargin;
+        display: flex;
+        gap: 12px;
+    }
+}
+
+.card {
+    @include desktop {
+        width: 231px;
+    }
+}
+
+.carusel {
+    margin-left: $pageLeftMargin;
+}
+
+.title {
+    @include titleMobile;
+    @include titleDesktop;
+    margin-left: $pageLeftMargin;
+    margin-bottom: 12px;
+    @include desktop {
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+}
+
+.titleFirst {
+    @include desktop {
+        align-self: center;
+        margin-right: 35px;
+        margin-left: 0;
+    }
+}
+
+.chefContainer {
+    justify-content: flex-start;
+    gap: 63px;
+}
+
+.img {
+    @include marginBothSides;
+}
+
+.content {
+    @include marginBothSides;
+    @include content;
+    // font-size: 18px;
+    // font-weight: 200;
+    // line-height: 28px;
+    // letter-spacing: 1.25px;
+    text-align: justify;
+    align-self: center;
+
+    @include desktop {
+        margin-left: 0;
+        margin-right: 0;
+        height: 255px;
+        width: 542px;
+        letter-spacing: 2px;
+    }
+}
+
+.desktop {
+    @include desktop {
+        display: flex;
+    }
+}
+
+.cardsContainer {
+    display: flex;
+    justify-content: flex-start;
+}

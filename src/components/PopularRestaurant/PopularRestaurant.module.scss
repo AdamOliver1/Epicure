@@ -1,0 +1,30 @@
+@use "../../sharedStyles/mixins.scss" as *;
+@use "../../sharedStyles/variables.scss" as *;
+
+.container {
+    @include flexColumn;
+    margin-top: 10%;
+    width: 100%;
+    margin-left: $pageLeftMargin;
+}
+
+.row {
+    display: flex;
+    gap: 12px;
+    margin-top: 18.2px;
+
+    @include desktop {
+        margin-top: 41px;
+        justify-content: flex-end;
+    }
+}
+
+.PopularRestaurantTitle {
+    @include titleMobile;
+    @include titleDesktop;
+    margin-bottom: 40px;
+
+    @include desktop {
+        text-align: center;
+    }
+}

@@ -1,0 +1,34 @@
+@use "../../../sharedStyles/mixins.scss" as *;
+@use "../../../sharedStyles/variables.scss" as *;
+@use "../../../sharedStyles/MobileDesktopSeparator.scss" as *;
+
+.container {
+    @include flexColumn;
+    height: 100%;
+    width: 100%;
+    background-color: $cardBackground;
+}
+
+.img {
+    height: 151px;
+    width: 245px;
+    object-fit: cover;
+
+    @include desktop {
+        height: 236px;
+        width: 379px;
+    }
+}
+
+.detailsContainer {
+    height: 100%;
+    padding-top: 16px;
+    padding-left: 16px;
+    padding-bottom: 16px;
+    padding-right: 16px;
+
+    @include desktop {
+        justify-content: center;
+        align-items: center;
+    }
+}

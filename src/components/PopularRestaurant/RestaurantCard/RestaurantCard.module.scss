@@ -1,0 +1,50 @@
+@use "../../../sharedStyles/mixins.scss" as *;
+@use "../../../sharedStyles/variables.scss" as *;
+
+.container {
+    width: 245px;
+    @include desktop {
+        width: 379px;
+    }
+    // swiper change
+    // width: 100%;
+}
+
+.children {
+    @include centerColumn;
+    // align-items: center;
+    // justify-content: center;
+    gap: 10px;
+}
+
+.starsContainer {
+    display: none;
+    @include desktop {
+        @include center;
+    }
+}
+
+.title {
+    @include cardTitleMobile;
+    @include cardTitleDesktop;
+}
+
+// .detailsContainer {
+//     @include flexColumn;
+//     gap: 10px;
+//     margin-left: 16px;
+// }
+
+// @include desktop {
+
+//     .container {
+//         width: 379px;
+//     }
+
+//     // .title {
+//     //     font-size: 40px;
+//     //     font-weight: 400;
+//     //     line-height: 47px;
+//     //     letter-spacing: 2.7px;
+//     // }
+// }

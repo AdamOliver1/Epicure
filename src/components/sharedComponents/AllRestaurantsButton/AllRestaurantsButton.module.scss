@@ -1,0 +1,20 @@
+@use "../../../sharedStyles/mixins.scss" as *;
+@use "../../../sharedStyles/variables.scss" as *;
+
+.allRestaurants {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: 2px;
+}
+
+.container {
+    display: flex;
+    gap: 5px;
+}
+
+.allRestaurantsArrow {
+    margin-top: 5%;
+    height: 17.9px;
+    width: 24px;
+}

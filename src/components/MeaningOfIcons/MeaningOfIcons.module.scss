@@ -1,0 +1,64 @@
+@use "../../sharedStyles/mixins.scss" as *;
+@use "../../sharedStyles/variables.scss" as *;
+@use "../../sharedStyles/MobileDesktopSeparator.scss" as *;
+
+.container {
+    @include centerColumn;
+    background-color: $grayBackground;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
+    height: 584px;
+
+    @include desktop {
+        gap: 60px;
+        height: 265px;
+        justify-content: center;
+    }
+}
+
+.desktopContainerIcons {
+    @include mobile {
+        @include centerColumn;
+        background-color: $grayBackground;
+        justify-content: space-around;
+        gap: 60px;
+        width: 100%;
+        height: 584px;
+    }
+
+    @include desktop {
+        @include center;
+        gap: 20px;
+    }
+}
+
+.margin {
+    margin-top: 46px;
+}
+
+.img {
+    height: 40px;
+    width: 50px;
+
+    @include desktop {
+        height: 50px;
+        width: 60px;
+    }
+}
+
+.group {
+    @include centerColumn;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+.desktop {
+    display: none;
+}
+
+.title {
+    @include titleMobile;
+    @include titleDesktop;
+    margin-top: 5px;
+}

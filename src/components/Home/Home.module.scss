@@ -1,0 +1,6 @@
+@use '../../sharedStyles/mixins.scss' as *;
+@use '../../sharedStyles/base.scss' as *;
+
+.container {
+  @include centerColumn;
+}

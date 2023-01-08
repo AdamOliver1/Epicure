@@ -1,0 +1,27 @@
+@use "../../../sharedStyles/mixins.scss" as *;
+
+.container {
+    @include flexColumn;
+    width: 100%;
+    justify-content: center;
+}
+
+.small {
+    max-width: 320;
+}
+
+.medium {
+    max-width: 768;
+}
+
+.large {
+    max-width: 1024;
+}
+
+.xLarge {
+    max-width: 1188px;
+}
+
+.xxLarge {
+    max-width: 1440;
+}

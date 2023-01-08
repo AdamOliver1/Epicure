@@ -1,0 +1,37 @@
+@use "../../sharedStyles/base.scss" as *;
+@use "../../sharedStyles/mixins.scss" as *;
+@use "../../sharedStyles/variables.scss" as *;
+@use "../../sharedStyles/MobileDesktopSeparator.scss" as *;
+
+.container {
+    @include flexColumn;
+    margin-top: 10%;
+    width: 100%;
+    margin-left: $pageLeftMargin;
+    max-width: 1330px;
+
+    @include desktop {
+        margin-top: 80px;
+    }
+}
+
+.title {
+    @include titleMobile;
+    @include titleDesktop;
+    margin-bottom: 5px;
+
+    @include desktop {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+}
+
+.row {
+    display: flex;
+    gap: 12px;
+    margin-top: 18.2px;
+
+    @include desktop {
+        margin-top: 40px;
+    }
+}

@@ -1,0 +1,101 @@
+@use "./variables.scss" as *;
+
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @content;
+}
+
+@mixin centerColumn {
+    @include center;
+    flex-direction: column;
+    @content;
+}
+
+@mixin flexColumn {
+    display: flex;
+    flex-direction: column;
+    @content;
+}
+
+@mixin desktop {
+    @media only screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media only screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin marginBothSides {
+    margin-left: $pageLeftMargin;
+    margin-right: $pageLeftMargin;
+}
+
+@mixin DisableOnDesktop {
+    @include desktop {
+        display: none;
+    }
+}
+
+@mixin titleMobile {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 35px;
+    letter-spacing: 1.25px;
+}
+
+@mixin titleDesktop {
+    @include desktop {
+        text-transform: uppercase;
+        font-size: 30px;
+        font-weight: 200;
+        line-height: 35px;
+        letter-spacing: 2.140000104904175px;
+    }
+}
+
+@mixin content {
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 28px;
+    letter-spacing: 2.2px;
+    white-space: pre-wrap;
+}
+
+@mixin cardTitleMobile {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 2.6700000762939453px;
+    @content;
+}
+
+@mixin cardTitleDesktop {
+    @include desktop {
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 47px;
+        letter-spacing: 2.7px;
+        @content;
+    }
+}
+
+// @mixin pageMarginMobile {
+//     margin-left: $pageMarginMobile;
+//     margin-right: $pageMarginMobile;
+//     @content
+// }
+
+// ;
+
+// @mixin pageMarginDesktop {
+//     margin-left: $pageMarginDesktop;
+//     margin-right: $pageMarginDesktop;
+//     @content
+// }
