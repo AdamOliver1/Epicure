@@ -8,10 +8,10 @@ import {
 import mashya from "../../assets/mashya.svg";
 import kitchenMarket from "../../assets/kitchenMarket.svg";
 import onza from "../../assets/onza.svg";
-import { Carusel } from "../sharedComponents/Carusel/Carusel";
 import { ChefOfTheWeekCard } from "./ChefOfTheWeekCard/ChefOfTheWeekCard";
 import { AllRestaurantsButton } from "../sharedComponents/AllRestaurantsButton/AllRestaurantsButton";
 export const ChefOfTheWeek = () => {
+  
   const [cards, setCards] = useState<IChefOfTheWeekCardModel[]>([
     new ChefOfTheWeekCardModel(onza, "Onza"),
     new ChefOfTheWeekCardModel(kitchenMarket, "kitchen Market"),
@@ -40,17 +40,15 @@ export const ChefOfTheWeek = () => {
       <div className={`${style.content} ${style.mobile}`}>{content}</div>
       <div className={`${style.title} ${style.titleSecond}`}>{title}</div>
       <div className={style.carusel}>
-        {/* <Carusel> */}
+     
         <div className={style.cardsContainer}>
           {cards.map((card) => {
-            return (
-              <div key={card.title} className={style.card}>
-                <ChefOfTheWeekCard key={card.title} card={card} />
-              </div>
+            return (             
+                <ChefOfTheWeekCard key={card.title} card={card} />          
             );
           })}
         </div>
-        {/* </Carusel> */}
+      
       </div>
       <div className={style.row}>
         <AllRestaurantsButton />

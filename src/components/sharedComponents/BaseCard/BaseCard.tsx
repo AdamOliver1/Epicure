@@ -1,27 +1,27 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import style from "./BaseCard.module.scss";
-import { SwiperSlide } from "swiper/react";
+
 type baseCardProps = {
   img: string;
   children: ReactNode;
-  height?: string;
-  width?: string;
+  smallWidth?: boolean;
 };
 
-const getImg = (img: string, height?: string, width?: string) => {
-  if((window.innerWidth > 768 ) && height && width){
-    return <img height={height} width={width} src={img} alt="true"></img>;
-  }
-  return  <img className={style.img} src={img} alt="true"></img>  
-}; 
+const getImgStyle = (smallWidth?: boolean) => {
+  if (smallWidth) return `${style.img} ${style.imgWidth}`;
+  return style.img;
+};
 
-export const BaseCard = ({ img, children,height,width }: baseCardProps) => {
+export const BaseCard = ({
+  img,
+  children,
+  smallWidth
+}: baseCardProps) => {
   return (
- <div className={style.container}>
-      {getImg(img,height,width)}
-       <div className={style.detailsContainer}>{children}</div>
-     </div>
- 
-   
+    <div className={style.container}>
+      <img className={getImgStyle(smallWidth)} src={img} alt="true"></img>
+
+      <div className={style.detailsContainer}>{children}</div>
+    </div>
   );
 };

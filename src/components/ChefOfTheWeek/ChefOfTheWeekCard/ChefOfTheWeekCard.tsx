@@ -9,8 +9,8 @@ type CardProps = {
 export const ChefOfTheWeekCard = ({ card }: CardProps) => {
   return (
     <div className={style.cardContainer}>
-      <BaseCard img={card.img} height="357px" width="231px">
-        <div className={style.container}>       
+      <BaseCard img={card.img} smallWidth={true}>
+        <div className={style.container}>
           <div className={style.title}>{card.title}</div>
         </div>
       </BaseCard>

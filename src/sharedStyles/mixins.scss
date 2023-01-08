@@ -1,5 +1,18 @@
 @use "./variables.scss" as *;
 
+
+@mixin desktop {
+    @media only screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media only screen and (max-width: 768px) {
+        @content;
+    }
+}
+
 @mixin center {
     display: flex;
     justify-content: center;
@@ -17,18 +30,6 @@
     display: flex;
     flex-direction: column;
     @content;
-}
-
-@mixin desktop {
-    @media only screen and (min-width: 768px) {
-        @content;
-    }
-}
-
-@mixin mobile {
-    @media only screen and (max-width: 768px) {
-        @content;
-    }
 }
 
 @mixin marginBothSides {
@@ -86,16 +87,3 @@
     }
 }
 
-// @mixin pageMarginMobile {
-//     margin-left: $pageMarginMobile;
-//     margin-right: $pageMarginMobile;
-//     @content
-// }
-
-// ;
-
-// @mixin pageMarginDesktop {
-//     margin-left: $pageMarginDesktop;
-//     margin-right: $pageMarginDesktop;
-//     @content
-// }

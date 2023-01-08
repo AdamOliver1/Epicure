@@ -26,11 +26,6 @@
     }
 }
 
-.card {
-    @include desktop {
-        width: 231px;
-    }
-}
 
 .carusel {
     margin-left: $pageLeftMargin;
