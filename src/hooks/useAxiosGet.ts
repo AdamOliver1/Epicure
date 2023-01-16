@@ -1,32 +1,18 @@
-import { useState, useEffect } from "react";
-import axios, { CancelTokenSource } from "axios";
-import axiosApi from "./axiosApi";
+import useAxios from "./baseUseAxios";
 
-const useAxiosGet = (url: string) => {
-    const [data, setData] = useState<any>(null);
-    const [isPending, setIsPending] = useState<boolean>(true);
-    const [error, setError] = useState<string | null>(null);
+export const useAxiosGet = (url: string) => {
+  return useAxios(url, "get");
+};
 
-    useEffect(() => {
-        const cancelToken: CancelTokenSource = axios.CancelToken.source();
-        axiosApi.get(`${url}`, { cancelToken: cancelToken.token })
-            .then(res => {
-                setIsPending(false);
-                setData(res.data);
-                setError(null);
-            })
-            .catch(err => {
-                if (axios.isCancel(err)) {
-                    return;
-                }
-                setIsPending(false);
-                setError(err.message);
-            })
-        return () => {
-            cancelToken.cancel();
-        }
-    }, [url]);
-    return { data, isPending, error }
-}
+export const useAxiosPost = (url: string) => {
+    return useAxios(url, "post");
+  };
 
-export default useAxiosGet;
+export const useAxiosPut = (url: string) => {
+    return useAxios(url, "put");
+  };
+
+export const useAxiosDelete = (url: string) => {
+    return useAxios(url, "delete");
+  };
+

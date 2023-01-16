@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-// add token for authorization
+//TODO add token for admin authorization
 const axiosApi = axios.create({
     baseURL: "http://localhost:8000/api/v1/"
 });

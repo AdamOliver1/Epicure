@@ -3,7 +3,6 @@ import Chef from "../../assets/Chef.svg";
 import { useEffect, useState } from "react";
 import {
   ChefOfTheWeekCardModel,
-  IChefOfTheWeekCardModel,
 } from "../../cardModels/ChefOfTheWeekCardModel";
 import mashya from "../../assets/mashya.svg";
 import kitchenMarket from "../../assets/kitchenMarket.svg";
@@ -11,7 +10,7 @@ import onza from "../../assets/onza.svg";
 import { ChefOfTheWeekCard } from "./ChefOfTheWeekCard/ChefOfTheWeekCard";
 import { AllRestaurantsButton } from "../sharedComponents/AllRestaurantsButton/AllRestaurantsButton";
 import { IBaseCard } from "../../cardModels/IBaseCard";
-import useAxiosGet from "../../hooks/useAxiosGet";
+import {useAxiosGet} from "../../hooks/useAxiosGet";
 import Restaurant from "../../dataModels/Restaurant";
 
 export const ChefOfTheWeek = () => {
