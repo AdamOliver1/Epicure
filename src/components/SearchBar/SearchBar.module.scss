@@ -50,6 +50,7 @@
     width: 100vw;
     object-fit: cover;
     height: 273px;
+
     @include desktop {
         display: none;
     }
@@ -63,6 +64,7 @@
     top: 64px;
     border-radius: 0px;
     display: none;
+    
     @include desktop {
         display: block;
     }

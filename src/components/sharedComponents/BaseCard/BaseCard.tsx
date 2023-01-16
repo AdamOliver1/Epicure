@@ -20,7 +20,6 @@ export const BaseCard = ({
   return (
     <div className={style.container}>
       <img className={getImgStyle(smallWidth)} src={img} alt="true"></img>
-
       <div className={style.detailsContainer}>{children}</div>
     </div>
   );

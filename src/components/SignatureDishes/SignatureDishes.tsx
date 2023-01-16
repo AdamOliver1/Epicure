@@ -3,14 +3,13 @@ import { SignatureDishCard } from "./SignatureDishCard/SignatureDishCard";
 import {
   SignatureDishCardModel,
   ISignatureDishCard,
-} from "../../models/SignatureDishCardModel";
+} from "../../cardModels/SignatureDishCardModel";
 import { useState } from "react";
 import garbanzoFrito from "../../assets/dishes/garbanzoFrito.svg";
 import padKiMao from "../../assets/dishes/padKiMao.svg";
 import smokedPizza from "../../assets/dishes/smokedPizza.svg";
 import { Carusel } from "../sharedComponents/Carusel/Carusel";
 import { AllRestaurantsButton } from "../sharedComponents/AllRestaurantsButton/AllRestaurantsButton";
-import { SwiperSlide } from "swiper/react";
 
 export const SignatureDishes = () => {
   const title = "Signature Dish of:";
@@ -24,7 +23,7 @@ export const SignatureDishes = () => {
       false,
       false,
       88,
-      true
+      false
     ),
     new SignatureDishCardModel(
       garbanzoFrito,

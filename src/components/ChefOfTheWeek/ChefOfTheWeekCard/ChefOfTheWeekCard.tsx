@@ -1,6 +1,6 @@
 import style from "./ChefOfTheWeekCard.module.scss";
 import { BaseCard } from "../../sharedComponents/BaseCard/BaseCard";
-import { IChefOfTheWeekCardModel } from "../../../models/ChefOfTheWeekCardModel";
+import { IChefOfTheWeekCardModel } from "../../../cardModels/ChefOfTheWeekCardModel";
 
 type CardProps = {
   card: IChefOfTheWeekCardModel;

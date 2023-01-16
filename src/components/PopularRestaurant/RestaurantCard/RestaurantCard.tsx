@@ -1,5 +1,5 @@
 import style from "./RestaurantCard.module.scss";
-import { IRestaurantCard } from "../../../models/RestaurantCardModel";
+import { IRestaurantCard } from "../../../cardModels/RestaurantCardModel";
 import fullStar from "../../../assets/fullStar.svg";
 import emptyStar from "../../../assets/emptyStar.svg";
 import { BaseCard } from "../../sharedComponents/BaseCard/BaseCard";
@@ -19,20 +19,19 @@ export const RestaurantCard = ({ card }: CardProps) => {
       }
     }
     return stars;
-  } 
+  }
 
   return (
     <div className={style.container}>
-    <BaseCard img={card.img}>
-      <div className={style.children}>
-      <div className={style.title}>{card.title}</div>
-      <div>{card.chef}</div>
-      <div className={style.starsContainer}>{getFullStars()}</div>
-      </div>
-    </BaseCard>
+      <BaseCard img={card.img}>
+        <div className={style.children}>
+          <div className={style.title}>{card.title}</div>
+          <div>{card.chef}</div>
+          <div className={style.starsContainer}>{getFullStars()}</div>
+        </div>
+      </BaseCard>
     </div>
   );
 };
 {
-  
 }

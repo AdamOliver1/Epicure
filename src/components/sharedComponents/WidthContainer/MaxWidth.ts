@@ -10,3 +10,10 @@ export class DesktopWidth implements IMaxWidth {
     }
 }
 
+
+export class LaptopWidth implements IMaxWidth {
+    getWidth() {
+        return style.large;
+    }
+}
+
