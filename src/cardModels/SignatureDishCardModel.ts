@@ -1,7 +1,6 @@
-import {IBaseCard} from './IBaseCard';
+import { IBaseCard } from "./IBaseCard";
 
-export interface ISignatureDishCard  extends IBaseCard{
-
+export interface ISignatureDishCard extends IBaseCard {
   ingredients: string;
   isSpicy: boolean;
   isVegan: boolean;

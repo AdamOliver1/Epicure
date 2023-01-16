@@ -6,6 +6,11 @@
 }
 
 
+@function spinAnimation() {
+    @return spin;
+}
+
+
 @function randomColor(){
     @return rgb(random(255), random(255), random(255));
   }

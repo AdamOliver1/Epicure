@@ -4,15 +4,12 @@ import fullStar from "../../../assets/fullStar.svg";
 import emptyStar from "../../../assets/emptyStar.svg";
 import { BaseCard } from "../../sharedComponents/BaseCard/BaseCard";
 
-type CardProps = {
-  card: IRestaurantCard;
-};
 
-export const RestaurantCard = ({ card }: CardProps) => {
+export const RestaurantCard = ({ rate ,img,title,chef}: IRestaurantCard) => {
   function getFullStars() {
     const stars = [];
     for (let i = 0; i < 5; i++) {
-      if (i < card.rate) {
+      if (i < rate) {
         stars.push(<img key={i} src={fullStar} alt="star"></img>);
       } else {
         stars.push(<img key={i} src={emptyStar} alt="star"></img>);
@@ -23,10 +20,10 @@ export const RestaurantCard = ({ card }: CardProps) => {
 
   return (
     <div className={style.container}>
-      <BaseCard img={card.img}>
+      <BaseCard img={img}>
         <div className={style.children}>
-          <div className={style.title}>{card.title}</div>
-          <div>{card.chef}</div>
+          <div className={style.title}>{title}</div>
+          <div>{chef.name}</div>
           <div className={style.starsContainer}>{getFullStars()}</div>
         </div>
       </BaseCard>

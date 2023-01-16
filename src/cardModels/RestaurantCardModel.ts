@@ -1,7 +1,8 @@
-import { IBaseCard } from './IBaseCard';
+import { Chef } from './../dataModels/Chef';
+import { IBaseCard } from "./IBaseCard";
 
-export interface IRestaurantCard extends IBaseCard{
-  chef:string;
+export interface IRestaurantCard extends IBaseCard {
+  chef: Chef;
   rate: number;
 }
 
@@ -9,10 +10,10 @@ export class RestaurantCardModel implements IRestaurantCard {
   img: string;
   title: string;
   rate: number;
-  chef:string;
+  chef: Chef;
 
-  constructor(img: string, title: string,  chef:string,rate: number) {
-    this.chef = chef; 
+  constructor(img: string, title: string, chef: Chef, rate: number) {
+    this.chef = chef;
     this.img = img;
     this.title = title;
     if (rate < 0 || rate > 5) {

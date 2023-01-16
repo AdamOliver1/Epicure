@@ -2,16 +2,12 @@ import style from "./ChefOfTheWeekCard.module.scss";
 import { BaseCard } from "../../sharedComponents/BaseCard/BaseCard";
 import { IChefOfTheWeekCardModel } from "../../../cardModels/ChefOfTheWeekCardModel";
 
-type CardProps = {
-  card: IChefOfTheWeekCardModel;
-};
-
-export const ChefOfTheWeekCard = ({ card }: CardProps) => {
+export const ChefOfTheWeekCard = ({img,title}: IChefOfTheWeekCardModel) => {
   return (
     <div className={style.cardContainer}>
-      <BaseCard img={card.img} smallWidth={true}>
+      <BaseCard img={img} smallWidth={true}>
         <div className={style.container}>
-          <div className={style.title}>{card.title}</div>
+          <div className={style.title}>{title}</div>
         </div>
       </BaseCard>
     </div>

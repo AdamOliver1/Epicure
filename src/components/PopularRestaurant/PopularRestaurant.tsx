@@ -1,32 +1,47 @@
 import style from "./PopularRestaurant.module.scss";
-import {
-  RestaurantCardModel,
-  IRestaurantCard,
-} from "../../cardModels/RestaurantCardModel";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { RestaurantCard } from "./RestaurantCard/RestaurantCard";
-import claro from "../../assets/dishes/claro.svg";
-import lumina from "../../assets/dishes/lumina.svg";
-import tigerLilly from "../../assets/dishes/tigerLilly.svg";
 import { Carusel } from "../sharedComponents/Carusel/Carusel";
 import { AllRestaurantsButton } from "../sharedComponents/AllRestaurantsButton/AllRestaurantsButton";
+import Restaurant from "../../dataModels/Restaurant";
+import { useAxiosGet } from "../../hooks/useAxios";
+import { Loader } from "../sharedComponents/Loader/Loader";
+import { useNavigate } from "react-router-dom";
 
 export const PopularRestaurant = () => {
-  const [cards, setCards] = useState<IRestaurantCard[]>([
-    new RestaurantCardModel(claro, "Claro", "Ran Shmueli", 4),
-    new RestaurantCardModel(lumina, "Lumina", "Meir Adoni", 3),
-    new RestaurantCardModel(tigerLilly, "Tiger Lilly", "Yanir Green", 4),
-  ]);
+  const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
+  const { data, isPending, error } = useAxiosGet("/restaurant");
+  // const navigate = useNavigate();
+  useEffect(() => {
+    setRestaurants(data);
+  }, [data]);
 
+  useEffect(() => {
+    if (error) {
+      console.log("navigate");
+    }
+  }, [error]);
   const title = "POPULAR RESTAURANT IN EPICURE:";
   return (
     <div className={style.container}>
       <h1 className={style.PopularRestaurantTitle}>{title}</h1>
-      <Carusel>
-        {cards.map((card) => {
-          return <RestaurantCard key={card.title} card={card}></RestaurantCard>;
-        })}
-      </Carusel>
+      {isPending && <Loader></Loader>}
+      {restaurants && (
+        <Carusel>
+          {restaurants.map((restaurant, i) => {
+            return (
+              <RestaurantCard
+                chef={restaurant.chef}
+                title={restaurant.name}
+                key={i}
+                rate={restaurant.stars}
+                img={restaurant.image}
+              ></RestaurantCard>
+            );
+          })}
+        </Carusel>
+      )}
+
       <div className={style.row}>
         <AllRestaurantsButton></AllRestaurantsButton>
       </div>
