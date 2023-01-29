@@ -1,5 +1,5 @@
-import style from './Loader.module.scss';
+import style from './ErrorPage.module.scss';
 export const Error = () => {
 
-  return <div className={style.loading}></div>;
+  return <div className={style.error}></div>;
 };

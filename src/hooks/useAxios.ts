@@ -5,7 +5,7 @@ export const useAxiosGet = (url: string) => {
 };
 
 export const useAxiosPost = (url: string,body:{}) => {
-  return Axios(url, "post",);
+  return Axios(url, "post");
 };
 
 export const useAxiosPut = (url: string) => {

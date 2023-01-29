@@ -11,16 +11,14 @@ import { useNavigate } from "react-router-dom";
 export const PopularRestaurant = () => {
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
   const { data, isPending, error } = useAxiosGet("/restaurant");
+  console.log(restaurants);
+  
   // const navigate = useNavigate();
   useEffect(() => {
     setRestaurants(data);
   }, [data]);
 
-  useEffect(() => {
-    if (error) {
-      console.log("navigate");
-    }
-  }, [error]);
+  
   const title = "POPULAR RESTAURANT IN EPICURE:";
   return (
     <div className={style.container}>

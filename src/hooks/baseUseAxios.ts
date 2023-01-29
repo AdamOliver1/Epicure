@@ -9,6 +9,7 @@ const useAxios = ( url: string, method: "get" | "post" | "put" | "delete", body:
 
   useEffect(() => {
     const cancelToken: CancelTokenSource = axios.CancelToken.source();
+    if(url === "") return;
     axiosApi[method](`${url}`, body, { cancelToken: cancelToken.token })
       .then((res) => {
         setIsPending(false);

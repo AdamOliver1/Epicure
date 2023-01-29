@@ -7,5 +7,6 @@ export default interface IDish extends IModel {
     ingredients?: string[];
     tags?: Tags[];
     restaurant: Restaurant;
+    image:string;
   }
   

@@ -1,5 +1,4 @@
 import style from "./SignatureDishCard.module.scss";
-import { ISignatureDishCard } from "../../../cardModels/SignatureDishCardModel";
 import vegan from "../../../assets/dishesIcons/vegan.svg";
 import spicy from "../../../assets/dishesIcons/spicy.svg";
 import line from "../../../assets/line.svg";
@@ -7,23 +6,29 @@ import shekel from "../../../assets/shekel.svg";
 import vegetarian from "../../../assets/dishesIcons/vegetarian.svg";
 import { BaseCard } from "../../sharedComponents/BaseCard/BaseCard";
 import nextId from "react-id-generator";
+import Dish from "../../../dataModels/Dish";
+import { Tags } from "../../../dataModels/Tags";
 
-type CardProps = {
-  card: ISignatureDishCard;
-};
+type props = {
+  dish: Dish
+}
 
-export const SignatureDishCard = ({ card }: CardProps) => {
+export const SignatureDishCard = ({dish}: props )=> {
+  const isSpicy = dish.tags?.find(tag => tag === Tags.SPICY);
+  const isVegan = dish.tags?.find(tag => tag === Tags.VEGAN);
+  const isVegetarian = dish.tags?.find(tag => tag === Tags.VEGETARIAN);
+
   const getIcons = () => {
     const icons = [];
-    if (card.isSpicy)
+    if (isSpicy)
       icons.push(
         <img key={nextId()} className={style.img} src={spicy} alt="true"></img>
       );
-    if (card.isVegan)
+    if (isVegan)
       icons.push(
         <img key={nextId()} className={style.img} src={vegan} alt="true"></img>
       );
-    if (card.isVegetarian)
+    if (isVegetarian)
       icons.push(
         <img
           key={nextId()}
@@ -35,8 +40,7 @@ export const SignatureDishCard = ({ card }: CardProps) => {
     return icons;
   };
 
-  const getPrice = (isPrice: boolean) => {
-    if (isPrice) {
+  const getPrice = () => {
       return (
         <div className={style.price}>
           <div className={style.desktop}>
@@ -47,7 +51,7 @@ export const SignatureDishCard = ({ card }: CardProps) => {
               <img src={shekel} alt=""></img>
             </div>
 
-            <div>{card.price}</div>
+            <div>{dish.price}</div>
           </div>
 
           <div className={style.desktop}>
@@ -55,18 +59,29 @@ export const SignatureDishCard = ({ card }: CardProps) => {
           </div>
         </div>
       );
-    }
-    return <></>;
   };
+
+
+  const getIngredients = ():string => {
+    if(dish.ingredients === undefined) return "";
+    let result = "";
+    for (let i = 0; i < dish.ingredients.length ?? 0; i++) {
+      result += dish.ingredients[i];
+      if (i !== dish.ingredients.length - 1) {
+        result += ", ";
+      }
+    }
+    return result;
+  }
 
   return (
     <div className={style.container}>
-      <BaseCard img={card.img}>
+      <BaseCard img={dish.image}>
         <div className={style.detailsContainer}>
-          <div className={style.title}>{card.title}</div>
-          <div className={style.ingredients}>{card.ingredients}</div>
+          <div className={style.title}>{dish.name}</div>
+          <div className={style.ingredients}>{getIngredients()}</div>
           <div className={style.iconsContainer}>{getIcons()}</div>
-          {getPrice(card.isPrice)}
+          {getPrice()}
         </div>
       </BaseCard>
     </div>
